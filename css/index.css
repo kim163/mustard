@@ -7,7 +7,35 @@ body {
     font: 16px/1.8 "Microsoft Yahei", verdana;
     background: #000000;
 }
-
+a{
+  text-decoration: none;
+}
+.logo{
+  position: fixed;
+  width: 188px;
+  height: 47px;
+  background: url("../images/logo.png") no-repeat;
+  top: 72px;
+  left: 72px;
+}
+.btn-list{
+  position: fixed;
+  top: 72px;
+  right: 72px;
+}
+.btn-list .btn-link{
+  width: 165px;
+  height: 47px;
+  border-radius: 23px;
+  border: solid 2px #d3d3d3;
+  display: inline-block;
+  margin-left: 40px;
+  line-height: 47px;
+  text-align: center;
+  font-size: 14px;
+  color: #d2d2d2;
+  cursor: pointer;
+}
 .section {
     position: relative;
     overflow: hidden;
@@ -16,7 +44,8 @@ body {
 .section1 .bg{
     width: 100%;
     height: 100%;
-    background: url('../images/bg1.png') no-repeat center
+    background: url('../images/bg1.png') no-repeat center;
+    background-size: cover;
 }
 
 .section2 .left {
@@ -24,6 +53,7 @@ body {
     height: 100%;
     position: absolute;
     background: url('../images/bg2-1.png') no-repeat center;
+    background-size: cover;
 }
 
 .section2 .right {
@@ -41,6 +71,7 @@ body {
     height: 100%;
     position: absolute;
     background: url('../images/bg3-1.png') no-repeat center;
+    background-size: cover;
 }
 
 .section3 .right {
