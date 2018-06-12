@@ -2,34 +2,80 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
     <title>mustard</title>
-    <link rel="stylesheet" href="css/jquery.fullPage.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--<link rel="stylesheet" href="css/jquery.fullPage.css">-->
+    <link href="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
-    <script src="js/jquery.fullPage.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.fullPage.js"></script>-->
+    <!--<script type="text/javascript" src="js/scrolloverflow.js"></script>-->
+
+
+    <!--<script type="text/javascript" src="js/jquery.fullpage.extensions.min.js"></script>-->
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script src="https://cdn.bootcss.com/fullPage.js/2.9.7/vendors/scrolloverflow.js"></script>
+    <script src="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+
     <script>
-        $(function(){
-            $.fn.fullpage({
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
                 verticalCentered: false,
-                anchors: ['page1', 'page2', 'page3'],
                 scrollOverflow: true,
-                scrollOverflowReset: true,
-                afterLoad: function(anchorLink, index){
-                    if(index === 2){
-                        $('#section2').addClass('on')
-                    }else if(index === 3){
-                        $('#section3').addClass('on')
-                    }
+                normalScrollElements: '.introduction',
+                // scrollOverflowOptions:{
+                //     snap:'.introduction'
+                // },
+                // scrollOverflowReset: true,
+                scrollOverflowOptions: {
+                    scrollY: false
                 },
-                onLeave: function(index, direction){
-                    console.log(index, direction)
-                    if(index == 2 && direction === 'up'){
-                        $('#section2, #section3').removeClass('on')
+                afterLoad: function (anchorLink, index) {
+                    // if (index === 2) {
+                    //     $('.more-text').addClass('hidden');
+                    //     $('.more').removeClass('hidden');
+                    // } else if (index === 3) {
+                    //     $('.more').addClass('hidden');
+                    //     $('.go-up').removeClass('hidden');
+                    // }
+                },
+                onLeave: function (index, nextIndex, direction) {
+                    console.log(nextIndex)
+                    if(nextIndex === 1){
+                        $('.more-text').removeClass('hidden');
+                        $('.more').removeClass('hidden');
+                        $('.go-up').addClass('hidden');
+                    }else if (nextIndex === 2) {
+                        $('.more-text').addClass('hidden');
+                        $('.more').removeClass('hidden');
+                        $('.go-up').addClass('hidden');
+                    }else if(nextIndex === 3){
+                        $('.more').addClass('hidden');
+                        $('.go-up').removeClass('hidden');
                     }
                 }
             });
+
+            var scroll2 = new IScroll('#introduction2,#introduction3',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            })
+
         });
+        function moveUp() {
+            $.fn.fullpage.moveSectionUp();
+        }
+
+        function moveDown() {
+            $.fn.fullpage.moveSectionDown();
+        }
     </script>
 </head>
 <body>
@@ -38,33 +84,114 @@
     <a href="" class="btn-link">联系我们</a>
     <a href="" class="btn-link">加入我们</a>
 </div>
-<div class="section section1" id="section1">
-    <div class="content">
-        <div class="logo-1"></div>
-        <!--<div class="text-1">-->
-            <!--<p>每一次的投入都不一定能有回报，但每一次的投入必定会给你带来对人生态度上的</p>-->
-            <!--<p>改变。我们不借助任何集团名声，我们要的是自己的名声。我们不在任何集团旗下，我们要做自己的旗下。</p>-->
-        <!--</div>-->
-        <!--<div class="name">云彩娱乐2</div>-->
-        <!--<div class="text-2">-->
-            <!--云彩娱乐2隶属云彩集团下且集团成功运营数个目前市场上一线平台旗下在线娱乐产品分公司-->
-        <!--</div>-->
-        <!--<a href="" class="go-link">访问官网</a>-->
-        <!--<div class="text-3">深入了解</div>-->
-        <!--<div class="arrow-down"></div>-->
+<div class="more">
+    <div class="more-text">深入了解</div>
+    <div class="arrow-down" onclick="moveDown()"></div>
+</div>
+<div class="go-up hidden" onclick="moveUp()"></div>
+<div id="fullpage">
+    <div class="section section1" id="section1">
+        <div class="content">
+            <div class="logo-1"></div>
+            <div class="text-1">
+            <p>每一次的投入都不一定能有回报，但每一次的投入必定会给你带来对人生态度上的</p>
+            <p>改变。我们不借助任何集团名声，我们要的是自己的名声。我们不在任何集团旗下，我们要做自己的旗下。</p>
+            </div>
+            <div class="name">云彩娱乐2</div>
+            <div class="text-2">
+            云彩娱乐2隶属云彩集团下且集团成功运营数个目前市场上一线平台旗下在线娱乐产品分公司
+            </div>
+            <a href="" class="go-link">访问官网</a>
+        </div>
     </div>
-</div>
 
-<div class="section section2" id="section2">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="text"></div>
-</div>
+    <div class="section section2" id="section2">
+        <div class="container">
+            <div class="title">云彩集团2号平台</div>
+            <div class="content">平台简介</div>
+            <div class="englist">Platform Intro</div>
+        </div>
+        <div class="section2-left"></div>
+        <div class="section2-right">
+            <div class="introduction" id="introduction2">
+                <div class="introduction-info">
+                    <div class="text-info">
+                        <p>1、平台概况</p>
+                        <p>云彩集团2号平台，云彩2采用最新的HTML5+CSS3开发而成，秉承＂让购彩变得赏心悦目＂的设计理念，
+                            在满足客户对一个完美平台的一切幻想的同时，尽可能减少资源消耗，力求打造一个功能丰富实用，
+                            操作方便快捷，体验舒适友好的平台。
+                        </p>
+                    </div>
+                    <div class="text-info">
+                        <p>2、商业模式</p>
+                        <p>官方彩种：平台提供北京PK拾，重庆时时彩，广东十一选五，福彩3D等在内的多种官方彩种供玩家选择。</p>
+                        <p>稳步发展：平台有完善的运营机制，根据不同的发展阶段投入不同的运营体制和规划。让您体验到宾至如归的代理体验。</p>
+                        <p>急速体验：耗时两年打造，极致的运行速度可以让您体会到0延迟的投注乐趣。</p>
+                    </div>
+                    <div class="text-info">
+                        <p>3、网站页面</p>
+                        <p>设计体验：页面简介大方，人性化设计体验</p>
+                        <p>稳定的平台，成熟的玩法，简单的下注流程、以及优质的客户服务。
+                            云彩娱乐网为娱乐博彩爱好者提供最优惠的赔率和最优质的博彩服务。
+                            云彩娱乐将会已良好的信誉和服务得到广大会员即代理们的支持和肯定，接受业界各行业与代理会员们的监督！
+                            如您对本公司有所疑惑，欢迎您对本公司随时进行监督。
+                        </p>
+                        <p>云彩娱乐为正派且稳健经营的网站，一直以最优惠的赔率和优质的服务深受会员好评，请放心进行投注，
+                            如您之前不了解本公司，欢迎您对本公司进行关注。
+                        </p>
+                    </div>
+                    <div class="text-info">
+                        <p>4、公司介绍</p>
+                        <p>云彩娱乐2隶属云彩集团下且集团成功运营数个目前市场上一线平台旗下在线娱乐产品分公司，总部位于菲律宾-马尼拉。
+                            公司在业内深耕多年，业务范围涵盖地产、酒店及在线娱乐。公司有成熟的在线娱乐产品开发、运营体系，成功运营了多家口碑在线娱乐平台，
+                            在用心服务客户的同时，也积累了丰富的运营经验。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow-down" onclick="moveDown()"></div>
+    </div>
 
-<div class="section section3" id="section3">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="text"></div>
+    <div class="section section3" id="section3">
+        <div class="container">
+            <div class="title">云彩集团2号平台</div>
+            <div class="content">团队介绍</div>
+            <div class="englist">Team Intro</div>
+        </div>
+        <div class="section3-left"></div>
+        <div class="section3-right">
+            <div class="introduction" id="introduction3">
+                <div class="introduction-info">
+                    <div class="text-info">
+                        <p>1、运营团队</p>
+                        <p>业界一线平台原班人马，10年运营经验为您在平台带来一流的代理体验。</p>
+                    </div>
+                    <div class="text-info">
+                        <p>2、开发团队</p>
+                        <p>15年业界资深开发技术团队原硅谷开发项目组长带队，为您带来一流的游戏体验。</p>
+                    </div>
+                    <div class="text-info">
+                        <p>每一次的投入都不一定能有回报，但每一次的投入必定会给你带来对人生态度上的改变。</p>
+                    </div>
+                    <div class="text-info">
+                        <p>我们不借助任何集团名声，我们要的是自己的名声。</p>
+                        <p>我们不在任何集团旗下，我们要做自己的旗下。</p>
+                        <p>我们没有任何集团限制，但是我们有集团资源。</p>
+                        <p>多年运营团队，资金雄厚，待遇高觉。</p>
+                    </div>
+                    <div class="text-info">
+                        <p>10年前错过了凤凰，不要紧我们现在等您。</p>
+                        <p>6年前错过了世爵东森，不要紧我们现在等您。</p>
+                        <p>1年前错过了云彩1，不要紧我们在云彩2等您。</p>
+                    </div>
+                    <div class="text-info">
+                        <p>我们的目标是让您和我们共同发展，长久共赢。</p>
+                        <p>做一个可以把账号传给下一代继续使用的平台。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
