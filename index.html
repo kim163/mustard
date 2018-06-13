@@ -6,21 +6,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
     <title>mustard</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <!--<link rel="stylesheet" href="css/jquery.fullPage.css">-->
     <link href="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/code-fx/Pure-CSS3-Animated-Border@V1.0/css/animated-border/animated-border.min.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <!--<script type="text/javascript" src="js/jquery.fullPage.js"></script>-->
-    <!--<script type="text/javascript" src="js/scrolloverflow.js"></script>-->
-
-
-    <!--<script type="text/javascript" src="js/jquery.fullpage.extensions.min.js"></script>-->
     <script type="text/javascript" src="js/iscroll.js"></script>
     <script src="https://cdn.bootcss.com/fullPage.js/2.9.7/vendors/scrolloverflow.js"></script>
     <script src="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.js"></script>
-
     <script>
         $(document).ready(function () {
             $('#fullpage').fullpage({
@@ -60,7 +52,14 @@
                 }
             });
 
-            var scroll2 = new IScroll('#introduction2,#introduction3',{
+            var scroll2 = new IScroll('#introduction2',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            })
+            var scroll2 = new IScroll('#introduction3',{
                 scrollbars: true,
                 mouseWheel: true,
                 interactiveScrollbars: true,
@@ -91,6 +90,7 @@
 <div class="go-up hidden" onclick="moveUp()"></div>
 <div id="fullpage">
     <div class="section section1" id="section1">
+        <canvas id="c"></canvas>
         <div class="content">
             <div class="logo-1"></div>
             <div class="text-1">
@@ -192,6 +192,8 @@
             </div>
         </div>
     </div>
+    <!--<script src="js/dat.gui.min.js"></script>-->
+    <!--<script src="js/start.js"></script>-->
 </div>
 </body>
 </html>

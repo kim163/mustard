@@ -48,35 +48,35 @@ svg {
     font-size: 12px;
 }
 
-@media (min-height: 1080px),(min-width:1920px) {
-    :root {
-        font-size:11.5px;
-    }
-}
+/*@media (min-height: 1080px),(min-width:1920px) {*/
+    /*:root {*/
+        /*font-size:11.5px;*/
+    /*}*/
+/*}*/
 
-@media (max-height: 1080px),(max-width:1919px) {
-    :root {
-        font-size:10.5px;
-    }
-}
+/*@media (max-height: 1080px),(max-width:1919px) {*/
+    /*:root {*/
+        /*font-size:10.5px;*/
+    /*}*/
+/*}*/
 
-@media (max-height: 900px),(max-width:1679px) {
-    :root {
-        font-size:9.5px;
-    }
-}
+/*@media (max-height: 900px),(max-width:1679px) {*/
+    /*:root {*/
+        /*font-size:9.5px;*/
+    /*}*/
+/*}*/
 
-@media (max-height: 800px),(max-width:1439px) {
-    :root {
-        font-size:8.5px;
-    }
-}
+/*@media (max-height: 800px),(max-width:1439px) {*/
+    /*:root {*/
+        /*font-size:8.5px;*/
+    /*}*/
+/*}*/
 
-@media (max-height: 700px),(max-width:1279px) {
-    :root {
-        font-size:7px;
-    }
-}
+/*@media (max-height: 700px),(max-width:1279px) {*/
+    /*:root {*/
+        /*font-size:7px;*/
+    /*}*/
+/*}*/
 
 @media (max-width: 767px) {
     :root {
@@ -91,8 +91,9 @@ svg {
     width: 16rem;
     height: 4rem;
     background: url("../images/logo.png") no-repeat;
+    background-size: 100% 100%;
     top: 6rem;
-    left: 6rem;
+    left: 5%;
     z-index: 999;
     animation: fadeInLeft 1s;
 }
@@ -100,7 +101,7 @@ svg {
 .btn-list {
     position: fixed;
     top: 6rem;
-    right: 6rem;
+    right: 5%;
     z-index: 999;
     animation: fadeInRight 1s;
 }
@@ -114,7 +115,7 @@ svg {
     margin-left: 3rem;
     line-height: 4rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #d2d2d2;
     cursor: pointer;
     z-index: 99;
@@ -123,7 +124,7 @@ svg {
     position: fixed;
     top: auto;
     right: auto;
-    bottom: 5.42rem;
+    bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
     text-transform: uppercase;
@@ -140,6 +141,7 @@ svg {
     width: 2rem;
     height: 4.167rem;
     background: url("../images/arrow.png") no-repeat;
+    background-size: 100% 100%;
     margin-top: 1rem;
     opacity: 0;
     animation: slideInUp 1s 1s forwards;
@@ -151,6 +153,7 @@ svg {
     left: 50%;
     transform: translateX(-50%);
     background: url("../images/arrow-up.png") no-repeat;
+    background-size: 100% 100%;
     width: 2rem;
     height: 4.167rem;
     cursor: pointer;
@@ -170,15 +173,22 @@ svg {
 
 .section1 .content {
     width: 100%;
+    height: 100%;
     color: #ffffff;
-    font-size: 1.17rem;
+    font-size: 1.5rem;
     text-align: center;
+}
+.section1 canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .section1 .content .logo-1 {
     width: 5.41rem;
     height: 3.17rem;
     background: url("../images/logo1.png") no-repeat;
+    background-size: 100% 100%;
     margin: 12rem auto 0;
     opacity: 0;
     animation: slideInUp 1s forwards;
@@ -188,7 +198,8 @@ svg {
     width: 100%;
     text-align: center;
     margin-top: 2rem;
-    font-size: 1.17rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     opacity: 0;
     animation: slideInUp 1s .2s forwards;
 }
@@ -204,8 +215,8 @@ svg {
 .section1 .content .text-2{
     width: 100%;
     text-align: center;
-    font-size: 1rem;
-    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
     opacity: 0;
     animation: slideInUp 1s .6s forwards;
 }
@@ -229,7 +240,6 @@ svg {
     height: 100%;
     position: absolute;
     background: url('../images/bg2-1.png') no-repeat center;
-    background-size: cover;
     z-index: 1;
     transform: translate(0,0);
     transition: all .5s 1s ease-in;
@@ -282,20 +292,20 @@ svg {
     opacity: 0;
     animation: container 3s forwards;
     transform-origin: left top;
-    margin-left: -5rem;
+    margin-left: -4rem;
 }
 .container .title{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .container .content{
-    font-size: 10rem;
+    font-size: 8rem;
 }
 .container .englist{
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .introduction{
     width: 50%;
-    height: 30rem;
+    height: 60%;
     position: relative;
     top: 25%;
     left: 25%;
@@ -310,7 +320,8 @@ svg {
     margin-bottom: 1rem;
 }
 .introduction .text-info p{
-    font-size: 1rem;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     color: #ffffff;
 }
 .arrow-down{
@@ -323,6 +334,40 @@ svg {
     transform: translate(-100%,0);
 }
 @media (max-width: 767px){
+    .go-up{
+        top: 2%;
+    }
+    .logo{
+        width: 12rem;
+        height: 3rem;
+    }
+    .btn-list{
+        transform: translateY(-25%);
+    }
+    .btn-list .btn-link{
+        width: 10rem;
+        height: 3rem;
+        margin-left: 2rem;
+        line-height: 3rem;
+        display: block;
+        margin-bottom: 1rem;
+
+    }
+    .section2-right,.section3-right{
+        width: 100%;
+        right: -100%;
+    }
+    .active .container{
+        left: 26%;
+        top: 16%;
+    }
+    .introduction{
+        width: 80%;
+        left: 10%;
+    }
+    .introduction .text-info p{
+        font-size: 3rem;
+    }
 
 }
 @keyframes left-tran {
