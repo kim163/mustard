@@ -170,13 +170,21 @@ svg {
     background: url('../images/bg1.png') no-repeat center;
     background-size: cover;
 }
-
+.fp-scroller{
+    height: 100%;
+}
 .section1 .content {
-    width: 100%;
+    width: 90%;
     height: 100%;
     color: #ffffff;
     font-size: 1.5rem;
     text-align: center;
+    position: absolute;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .section1 canvas{
     position: absolute;
@@ -189,7 +197,7 @@ svg {
     height: 3.17rem;
     background: url("../images/logo1.png") no-repeat;
     background-size: 100% 100%;
-    margin: 12rem auto 0;
+    /*margin: 12rem auto 0;*/
     opacity: 0;
     animation: slideInUp 1s forwards;
 }
@@ -352,6 +360,15 @@ svg {
         display: block;
         margin-bottom: 1rem;
 
+    }
+    .section1 .content .text-1,.section1 .content .text-2{
+        font-size: 2.5rem;
+    }
+    .section1 .content .name{
+        font-size: 6rem;
+    }
+    .section1 .content .go-link{
+        font-size: 3rem;
     }
     .section2-right,.section3-right{
         width: 100%;
