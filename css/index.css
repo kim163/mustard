@@ -148,7 +148,7 @@ svg {
 }
 .go-up{
     position: fixed;
-    top: 6rem;
+    bottom: 5%;
     right: auto;
     left: 50%;
     transform: translateX(-50%);
@@ -342,9 +342,9 @@ svg {
     transform: translate(-100%,0);
 }
 @media (max-width: 767px){
-    .go-up{
-        top: 2%;
-    }
+    /*.go-up{*/
+        /*top: 2%;*/
+    /*}*/
     .logo{
         width: 12rem;
         height: 3rem;
