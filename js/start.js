@@ -1,8 +1,8 @@
 // base image: http://hd4desktop.com/images/m/a-colours-circle-rainbow-HD-Wallpaper.jpg
 
-var w = c.width = window.innerWidth,
-    h = c.height = window.innerHeight,
-    ctx = c.getContext( '2d' ),
+var w = canvas.width = window.innerWidth,
+    h = canvas.height = window.innerHeight,
+    ctx = canvas.getContext( '2d' ),
     
     opts = {
       
@@ -28,7 +28,7 @@ var w = c.width = window.innerWidth,
       
       repaintAlpha: .015
     },
-    gui = new dat.GUI,
+    // gui = new dat.GUI,
     
     lines = [],
     stars = [],
@@ -40,33 +40,10 @@ function init() {
   lines.length = stars.length = 0;
   
   ctx.globalCompositeOperation = 'source-over';
-  ctx.fillStyle = 'transparent';
+  ctx.fillStyle = '#333';
   ctx.fillRect( 0, 0, w, h );
   
   if( first ) {
-    
-    // var f = gui.addFolder( 'logics' );
-    f.add( opts, 'lineCount', 1, 300 );
-    f.add( opts, 'starCount', 1, 300 );
-    f.add( opts, 'radVel', 0, 1 );
-    f.add( opts, 'lineBaseVel', .01, 1 );
-    f.add( opts, 'lineAddedVel', 0, 1 );
-    f.add( opts, 'lineBaseLife', 0, 1 );
-    f.add( opts, 'lineAddedLife', 0, 1 );
-    f.add( opts, 'starBaseLife', 0, 100 );
-    f.add( opts, 'starAddedLife', 0, 100 );
-       // f = gui.addFolder( 'graphics' );
-    f.add( opts, 'ellipseTilt', -Math.PI, Math.PI ).step( .1 );
-    f.add( opts, 'ellipseBaseRadius', 0, .5 );
-    f.add( opts, 'ellipseAddedRadius', 0, .5 );
-    f.add( opts, 'ellipseAxisMultiplierX', 0, 3 );
-    f.add( opts, 'ellipseAxisMultiplierY', 0, 3 );
-    f.add( opts, 'ellipseCX', 0, w );
-    f.add( opts, 'ellipseCY', 0, h );
-    f.add( opts, 'repaintAlpha', 0, 1 );
-    // gui.add( window, 'init' ).name( 'reset animation' );
-    // gui.add( window, 'LuukLamers' );
-    
     loop();
     first = false;
   }
