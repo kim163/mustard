@@ -60,6 +60,9 @@ svg {
 .hidden {
     display: none;
 }
+.font-bold{
+    font-weight: bold;
+}
 
 .logo {
     position: fixed;
@@ -348,17 +351,14 @@ svg {
 
 .container .title {
     font-size: 2rem;
-    font-weight: bold;
 }
 
 .container .content {
     font-size: 8rem;
-    font-weight: bold;
 }
 
 .container .englist {
     font-size: 4rem;
-    font-weight: bold;
 }
 
 .introduction {
