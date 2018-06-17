@@ -19,21 +19,11 @@
                 verticalCentered: false,
                 scrollOverflow: true,
                 normalScrollElements: '.introduction',
-                // scrollOverflowOptions:{
-                //     snap:'.introduction'
-                // },
-                // scrollOverflowReset: true,
                 scrollOverflowOptions: {
                     scrollY: false
                 },
                 afterLoad: function (anchorLink, index) {
-                    // if (index === 2) {
-                    //     $('.more-text').addClass('hidden');
-                    //     $('.more').removeClass('hidden');
-                    // } else if (index === 3) {
-                    //     $('.more').addClass('hidden');
-                    //     $('.go-up').removeClass('hidden');
-                    // }
+
                 },
                 onLeave: function (index, nextIndex, direction) {
                     console.log(nextIndex)
@@ -45,7 +35,7 @@
                         $('.more-text').addClass('hidden');
                         $('.more').removeClass('hidden');
                         $('.go-up').addClass('hidden');
-                    }else if(nextIndex === 3){
+                    }else if(nextIndex === 4){
                         $('.more').addClass('hidden');
                         $('.go-up').removeClass('hidden');
                     }
@@ -66,7 +56,13 @@
                 shrinkScrollbars: 'scale',
                 fadeScrollbars: true
             })
-
+            var scroll3 = new IScroll('#introduction4',{
+                scrollbars: true,
+                mouseWheel: true,
+                interactiveScrollbars: true,
+                shrinkScrollbars: 'scale',
+                fadeScrollbars: true
+            })
         });
         function moveUp() {
             $.fn.fullpage.moveSectionUp();
@@ -112,8 +108,10 @@
             <div class="content">平台简介</div>
             <div class="englist">Platform Intro</div>
         </div>
-        <div class="section2-left"></div>
-        <div class="section2-right">
+        <div class="section-left section2-left">
+            <div class="mask"></div>
+        </div>
+        <div class="section-right section2-right">
             <div class="introduction" id="introduction2">
                 <div class="introduction-info">
                     <div class="text-info">
@@ -150,7 +148,6 @@
                 </div>
             </div>
         </div>
-        <div class="arrow-down" onclick="moveDown()"></div>
     </div>
 
     <div class="section section3" id="section3">
@@ -159,16 +156,18 @@
             <div class="content">团队介绍</div>
             <div class="englist">Team Intro</div>
         </div>
-        <div class="section3-left"></div>
-        <div class="section3-right">
+        <div class="section-left section3-left">
+            <div class="mask"></div>
+        </div>
+        <div class="section-right section3-right">
             <div class="introduction" id="introduction3">
                 <div class="introduction-info">
                     <div class="text-info">
-                        <p>1、运营团队</p>
+                        <p><span class="icon icon-1"></span>运营团队</p>
                         <p>业界一线平台原班人马，10年运营经验为您在平台带来一流的代理体验。</p>
                     </div>
                     <div class="text-info">
-                        <p>2、开发团队</p>
+                        <p><span class="icon icon-2"></span>开发团队</p>
                         <p>15年业界资深开发技术团队原硅谷开发项目组长带队，为您带来一流的游戏体验。</p>
                     </div>
                     <div class="text-info">
@@ -190,6 +189,254 @@
                         <p>做一个可以把账号传给下一代继续使用的平台。</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section4" id="section4">
+        <div class="container">
+            <div class="title">云彩集团2号平台</div>
+            <div class="content">域名验证</div>
+            <div class="englist">Domain Validation</div>
+        </div>
+        <div class="section-left section4-left">
+            <div class="mask"></div>
+        </div>
+        <div class="section-right section4-right">
+            <div class="introduction" id="introduction4">
+                <div class="introduction-info">
+                    <div class="line-info">
+                        <div class="line-name">
+                            <span class="icon icon-pc"></span>
+                            PC线路
+                        </div>
+                        <div class="line-list">
+                            <a href="" class="list-item green">
+                                <div class="top">
+                                    <div class="name">登陆线路1</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item yellow">
+                                <div class="top">
+                                    <div class="name">登陆线路2</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="line-info">
+                        <div class="line-name">
+                            <span class="icon icon-mobile"></span>
+                            APP线路
+                        </div>
+                        <div class="line-list">
+                            <a href="" class="list-item green">
+                                <div class="top">
+                                    <div class="name">登陆线路1</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item yellow">
+                                <div class="top">
+                                    <div class="name">登陆线路2</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                            <a href="" class="list-item red">
+                                <div class="top">
+                                    <div class="name">登陆线路3</div>
+                                    <div class="signal"></div>
+                                </div>
+                                <div class="bottom">
+                                    <span class="status">状态:</span>
+                                    <span class="status-speed">良好</span>
+                                    <span class="status-speed">999ms</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="refresh-button">
+                <span class="icon"></span>
+                重新检测您的访问速度
+            </div>
+            <div class="browset-list">
+                <a href="" class="browset-item">
+                    <span class="icon icon-google"></span>
+                    谷歌浏览器下载
+                </a>
+                <a href="" class="browset-item">
+                    <span class="icon icon-ie"></span>
+                    IE浏览器下载
+                </a>
+                <a href="" class="browset-item">
+                    <span class="icon icon-firefox"></span>
+                    火狐浏览器下载
+                </a>
             </div>
         </div>
     </div>
