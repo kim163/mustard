@@ -127,7 +127,7 @@ svg {
 
 .go-up {
     position: fixed;
-    bottom: 5%;
+    top: 11%;
     right: auto;
     left: 50%;
     transform: translateX(-50%);
@@ -347,15 +347,18 @@ svg {
 }
 
 .container .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .container .content {
     font-size: 8rem;
+    font-weight: bold;
 }
 
 .container .englist {
     font-size: 4rem;
+    font-weight: bold;
 }
 
 .introduction {
@@ -382,8 +385,8 @@ svg {
 }
 
 .introduction .text-info p {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
     color: #ffffff;
 }
 .line-info{
@@ -539,7 +542,9 @@ svg {
         width: 12rem;
         height: 3rem;
     }
-
+    .go-up{
+        top: 5%;
+    }
     .btn-list {
         transform: translateY(-25%);
     }
