@@ -402,11 +402,13 @@ svg {
     width: 34px;
     height: 30px;
     background: url("../images/icon-4-1.png") no-repeat center;
+    background-size: 100% 100%;
 }
 .line-info .line-name .icon-mobile{
     width: 27px;
     height: 33px;
     background: url("../images/icon-4-2.png") no-repeat center;
+    background-size: 100% 100%;
 }
 .line-info .line-list{
     width: 100%;
@@ -442,18 +444,21 @@ svg {
 }
 .green .signal{
      background: url("../images/signal-1.png") no-repeat;
+    background-size: 100% 100%;
  }
 .green .status-speed{
     color: #20c500;
 }
 .yellow .signal{
     background: url("../images/signal-2.png") no-repeat;
+    background-size: 100% 100%;
 }
 .yellow .status-speed{
     color: #dcb900;
 }
 .red .signal{
     background: url("../images/signal-3.png") no-repeat;
+    background-size: 100% 100%;
 }
 .red .status-speed{
     color: #fa1c1c;
@@ -479,6 +484,7 @@ svg {
     margin-right: 1rem;
     background: url("../images/refresh.png") no-repeat center;
     vertical-align: sub;
+    transform: translateY(-.2rem);
 }
 .browset-list{
     width: 65%;
@@ -492,6 +498,7 @@ svg {
     display: block;
     width: 30%;
     color: #ffffff;
+    text-align: center;
 }
 .browset-list .browset-item .icon{
     width: 2rem;
